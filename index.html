@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NightLock: Last Light</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div id="menu">
+    <div class="menu-box">
+        <h1>NIGHTLOCK</h1>
+        <h2>Last Light</h2>
+
+        <button id="startBtn">START</button>
+        <button id="quitBtn">QUIT</button>
+
+        <div class="credits">
+            Created by Manan Pahuja<br>
+            pahujamanan2011@gmail.com
+        </div>
+    </div>
+</div>
+
+<div id="hud" class="hidden">
+    <div id="weaponUI">
+        <img id="weaponIcon" src="assets/images/pistol.png">
+        <span id="ammoText">30</span>
+    </div>
+
+    <div id="scoreUI">
+        Score: <span id="score">0</span>
+    </div>
+
+    <div id="livesUI"></div>
+</div>
+
+<canvas id="gameCanvas"></canvas>
+
+<script src="src/game.js"></script>
+</body>
+</html>

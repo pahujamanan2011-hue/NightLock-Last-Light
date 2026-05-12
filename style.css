@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background: black;
+    font-family: monospace;
+}
+
+canvas {
+    display: block;
+    image-rendering: pixelated;
+}
+
+#menu {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.92);
+    z-index: 10;
+}
+
+.menu-box {
+    text-align: center;
+    color: red;
+}
+
+.menu-box h1 {
+    font-size: 64px;
+    margin-bottom: 10px;
+}
+
+.menu-box h2 {
+    margin-bottom: 40px;
+}
+
+button {
+    width: 220px;
+    height: 60px;
+    margin: 10px;
+    background: #111;
+    border: 3px solid red;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: red;
+}
+
+.credits {
+    margin-top: 40px;
+    font-size: 14px;
+    color: gray;
+}
+
+.hidden {
+    display: none;
+}
+
+#hud {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    color: white;
+}
+
+#weaponUI {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#weaponUI img {
+    width: 80px;
+}
+
+#ammoText {
+    display: block;
+    margin-top: 5px;
+}
+
+#scoreUI {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#livesUI {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.heart {
+    width: 40px;
+    margin-left: 5px;
+}

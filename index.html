@@ -1,43 +1,45 @@
+cat > /mnt/user-data/outputs/NightLock/index.html << 'EOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NightLock: Last Light</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NightLock: Last Light</title>
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html, body {
+    width:100%; height:100%;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    user-select:none;
+  }
+  #wrap {
+    position:relative;
+    width:800px; height:600px;
+    flex-shrink:0;
+  }
+  canvas {
+    display:block;
+    position:absolute;
+    top:0; left:0;
+    width:800px; height:600px;
+    image-rendering:pixelated;
+    image-rendering:crisp-edges;
+  }
+  #gameCanvas  { z-index:1; cursor:crosshair; }
+  #uiCanvas    { z-index:2; pointer-events:none; }
+</style>
 </head>
 <body>
-
-<div id="menu">
-    <div class="menu-box">
-        <h1>NIGHTLOCK</h1>
-        <h2>Last Light</h2>
-
-        <button id="startBtn">START</button>
-        <button id="quitBtn">QUIT</button>
-
-        <div class="credits">
-            Created by Manan Pahuja<br>
-            pahujamanan2011@gmail.com
-        </div>
-    </div>
+<div id="wrap">
+  <canvas id="gameCanvas"  width="800" height="600"></canvas>
+  <canvas id="uiCanvas"    width="800" height="600"></canvas>
 </div>
-
-<div id="hud" class="hidden">
-    <div id="weaponUI">
-        <img id="weaponIcon" src="assets/images/pistol.png">
-        <span id="ammoText">30</span>
-    </div>
-
-    <div id="scoreUI">
-        Score: <span id="score">0</span>
-    </div>
-
-    <div id="livesUI"></div>
-</div>
-
-<canvas id="gameCanvas"></canvas>
-
-<script src="src/game.js"></script>
+<script src="game.js"></script>
 </body>
 </html>
+EOF
+echo "index.html written"
